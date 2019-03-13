@@ -1,0 +1,18 @@
+/* CONTAINER POST */
+
+.container-post, .container-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.container-header {
+    height: 40px;
+    width: 100%;
+    border: 1px solid lightgray;
+}
+
+.container-header .profile-IMG, .container-header .userName {
+    margin-left: 10px;
+}
+
