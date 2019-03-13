@@ -23,11 +23,7 @@
         padding-left: 15px;
     }
 
-.searchBar-right {
-
-}
-
-    .far {
+    .searchBar-right .far {
         font-size: 20px;
         padding-right: 15px;
     }
@@ -36,18 +32,49 @@
 
 /* CONTAINER POST */
 
-.container-post, .container-header {
+.container-post {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-postHeader {
+    display: flex;
+    height: 40px;
+    align-items: center;
+    border: 1px solid lightgrey
+}
+    .profile-IMG, .userName {
+        padding-left: 15px;
+    }
+
+.container-postBottom {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+}
+
+/* COMMENTS */
+.container-comments {
+    display: flex;
+    flex-direction: column;
+}
+.commentContent {
+    display: flex;
+    margin-bottom: 5px;
+}
+    .commentContent .commentUser {
+        font-weight: bold;
+        padding-right: 5px;
+    }
+.addComment {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
-}
-
-.container-header {
+    border-top: 1px solid lightgrey;
+    margin-right: 15px;
     height: 40px;
-    width: 100%;
-    border: 1px solid lightgray;
+    
 }
-
-.container-header .profile-IMG, .container-header .userName {
-    margin-left: 10px;
+input {
+    border: 0px;
+    flex-grow: 1;
 }
