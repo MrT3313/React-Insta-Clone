@@ -1,3 +1,39 @@
+/* SEARCH BAR */
+
+.container-searchBar, 
+.searchBar-left,
+.searchBar-center,
+.searchBar-right {
+    display: flex;
+    justify-content: space-between
+}
+
+.searchBar-left, .searchBar-center, .searchBar-right {
+    align-items: center;
+}
+
+    .searchBar-left .instagramLogo {
+        padding: 0px 15px;
+        border-right: 1px solid black;
+    }
+    .fab {
+        font-size: 30px;
+    }
+    .searchBar-left .instagramName {
+        padding-left: 15px;
+    }
+
+.searchBar-right {
+
+}
+
+    .far {
+        font-size: 20px;
+        padding-right: 15px;
+    }
+
+
+
 /* CONTAINER POST */
 
 .container-post, .container-header {
@@ -15,4 +51,3 @@
 .container-header .profile-IMG, .container-header .userName {
     margin-left: 10px;
 }
-
