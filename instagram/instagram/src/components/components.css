@@ -58,6 +58,7 @@
     }
 
 .postIMG img {
+    max-width: 660px;
     margin-bottom: 15px;
 }
 
