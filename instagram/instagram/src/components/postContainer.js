@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 
-import Comment from './Comment'
+import CommentContainer from './CommentContainer'
 
 import './components.css'
 
@@ -19,8 +19,6 @@ function PostContainer(props) {
                     </div>
                 </div>
                 <div className='postIMG'>
-                    {/* <img src="https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjzptfpiYDhAhVRS6wKHVPGCdUQjRx6BAgBEAU&url=https%3A%2F%2Fwww.123rf.com%2Fphoto_82766200_stock-vector-winking-smiley-gesturing-with-his-hand-emoticon-thumbs-up-showing-positive-mood-.html&psig=AOvVaw15-JFPtjFK_3SsadC8Ufy8&ust=1552599451913638" alt="placeholderImg" /> */}
-
                     <img src={post.imageUrl} alt='img'/>
                 </div>
                 <div className='container-postBottom'>
@@ -31,15 +29,8 @@ function PostContainer(props) {
                             <div>{post.likes} likes</div>
                         </div>
                     </div>
-                    <div className='container-comments'>
-                        { post.comments.map( comment => (
-                            <Comment comment={comment} />
-                        ))}
-                    </div>
-                    <div className='addComment'>
-                        <input type="text" name='addComment' placeholder='Add a comment...'/>
-                        <i className="fas fa-ellipsis-h"></i>
-                    </div>
+                    <CommentContainer comments={post.comments}/>
+
                 </div>
 
             </div>
@@ -47,8 +38,10 @@ function PostContainer(props) {
 }
 
 PostContainer.propTypes = {
-    thumbnailUrl: PropTypes.number,
+    post: PropTypes.array,
+    // post.thumbnailUrl: PropTypes.number,
     imageUrl: PropTypes.string,
+
     username: PropTypes.string,
     likes: PropTypes.number,
     comments: PropTypes.array
