@@ -13,13 +13,37 @@ class CommentContainer extends Component {
             comments: this.props.comments,
             commentText: ''
         }
+        console.log('comment container CONSTRUCTOR invoked')
     }
+
+    componentDidMount() {
+        console.log('comment container CDM')
+    }
+    
+    buttonHelper = e => {
+        if (this.state.commentText !== '') {
+            const newComment = {
+                text: this.state.commentText,
+                username: 'billyBobTheTROLL'
+            }
+        
+            this.setState(prevState => ({
+                comments: [newComment, ...prevState.comments],
+                commentText: ''
+            }))
+        }
+        
+    }
+        // submitComment = () => {
+        //     this.setState( {comments: }
+        // }
 
     changeHandler = e => {
         this.setState({ commentText: e.target.value})
     }
 
     render() {
+        console.log('comment container RENDER invoked')
         return (
         <div className="commentContainer">
     
@@ -36,7 +60,12 @@ class CommentContainer extends Component {
                     value={this.state.commentText}
                     onChange={this.changeHandler}
                 />
-                <i className="fas fa-ellipsis-h"></i>
+                <button 
+                    onClick={this.buttonHelper}
+                >
+                    <i className="fas fa-ellipsis-h"></i>
+                </button>
+                
             </div>
         </div>
         );
