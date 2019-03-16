@@ -14,7 +14,7 @@ class App extends Component {
       posts: []
     }
   }
-  componentDidMount() {
+  componentDidMount() { // ONLY called ONCE --> SETUP
     console.log('CDM Invoked')
     
     // -W/out Timeout- //
@@ -23,7 +23,7 @@ class App extends Component {
     // -W Timeout- //
       setTimeout( () => {
         this.setState({ posts: dummyData })
-      }, 2000)
+      }, 1000)
   }
 
   componentDidUpdate() {
