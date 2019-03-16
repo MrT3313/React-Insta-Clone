@@ -10,8 +10,13 @@ class CommentContainer extends Component {
         // const { comments }  = props;
         super(props);
         this.state = {
-            comments: this.props.comments
+            comments: this.props.comments,
+            commentText: ''
         }
+    }
+
+    changeHandler = e => {
+        this.setState({ commentText: e.target.value})
     }
 
     render() {
@@ -23,7 +28,14 @@ class CommentContainer extends Component {
             ))}
 
             <div className='addComment'>
-                <input type="text" name='addComment' placeholder='Add a comment...'/>
+                <input 
+                    type="text" 
+                    name='addComment' 
+                    placeholder='Add a comment...'
+
+                    value={this.state.commentText}
+                    onChange={this.changeHandler}
+                />
                 <i className="fas fa-ellipsis-h"></i>
             </div>
         </div>
