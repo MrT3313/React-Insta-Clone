@@ -11,23 +11,41 @@ class App extends Component {
     console.log('Constructor Invoked')
     super();
     this.state = {
-      // posts: dummyData
       posts: []
     }
   }
   componentDidMount() {
     console.log('CDM Invoked')
-    this.setState({ posts: dummyData })
+    
+    // -W/out Timeout- //
+      // this.setState({ posts: dummyData })
+
+    // -W Timeout- //
+      setTimeout( () => {
+        this.setState({ posts: dummyData })
+      }, 2000)
   }
+
+  componentDidUpdate() {
+    console.log('CDU Invoked')
+    // WHAT IS THIS USED FOR AGAIN???
+  }
+
   render() {
     console.log('Render Invoked')
     return (
       <div className="App">
           <SearchBar />
 
-          { this.state.posts.map( post => (
-            <PostContainer post={post} />
-          ))}
+          {this.state.posts.length > 0 ? (
+            this.state.posts.map( post => (
+              <PostContainer post={post} />
+            ))) : (
+              <h2>page is currently loading!! CALM DOWN!!</h2>
+            )}
+
+
+          
       </div>
     );
   }

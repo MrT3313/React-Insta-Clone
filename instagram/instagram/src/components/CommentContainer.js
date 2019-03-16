@@ -5,11 +5,11 @@ import './components.css'
 
 // !!!MAKE INTO STATEFUL COMPONENT
 class CommentContainer extends Component {
-    constructor() {
+    constructor(props) {
         // const { comments }  = props;
-        super();
+        super(props);
         this.state = {
-            comments: []
+            comments: this.props
         }
     }
 
