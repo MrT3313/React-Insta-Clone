@@ -34,9 +34,6 @@ class CommentContainer extends Component {
         }
         
     }
-        // submitComment = () => {
-        //     this.setState( {comments: }
-        // }
 
     changeHandler = e => {
         this.setState({ commentText: e.target.value})
