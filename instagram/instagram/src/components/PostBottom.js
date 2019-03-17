@@ -8,17 +8,13 @@ class PostBottom extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            
+            likeStatus: false
         }
         console.log('comment container CONSTRUCTOR invoked')
     }
 
-    componentDidMount() {
-        console.log('comment container CDM')
-    }
-    
-    buttonHelper = e => {
-        
+    likeBtnTgl = e => {
+        this.setState( { likeStatus: !this.state.likeStatus} )
     }
 
     render() {
@@ -26,9 +22,11 @@ class PostBottom extends Component {
         return (
             <div className='container-postBottom'>
                 <div className='postInteraction'>
-                    <i 
-                        className="far fa-heart false" 
-                        onClick={this.onClickHelper}
+                    <i
+                        className={
+                            this.state.likeStatus ? 'fas fa-heart': 'far fa-heart'
+                        }
+                        onClick={this.likeBtnTgl}
                     ></i>
                     <i className="far fa-comment"></i>
                     <div className='likeCounter'>
