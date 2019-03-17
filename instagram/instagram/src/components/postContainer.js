@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import CommentContainer from './CommentContainer'
+
 import PostHeader from './PostHeader'
+import PostBottom from './PostBottom'
 
 import './components.css'
 
@@ -38,25 +39,14 @@ class PostContainer extends Component {
                     username={this.props.post.username}
                 />
 
-
-
                 <div className='postIMG'>
                     <img src={this.props.post.imageUrl} alt='img'/>
                 </div>
-                <div className='container-postBottom'>
-                    <div className='postInteraction'>
-                        <i 
-                            className="far fa-heart false" 
-                            onClick={this.onClickHelper}
-                            // onDoubleClick={this.onDoubleClickHelper}
-                        ></i>
-                        <i className="far fa-comment"></i>
-                        <div className='likeCounter'>
-                            <div>{this.props.post.likes} likes</div>
-                        </div>
-                    </div>
-                    <CommentContainer comments={this.props.post.comments}/>
-                </div>
+
+                <PostBottom 
+                    likes={this.props.post.likes}
+                    comments={this.props.post.comments}
+                /> 
             </div>
         )
     }
