@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Comment from './Comment'
-import './components.css'
+import '../components.css'
 
 
 // !!!MAKE INTO STATEFUL COMPONENT

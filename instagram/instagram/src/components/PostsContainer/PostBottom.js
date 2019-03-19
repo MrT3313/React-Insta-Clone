@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import CommentContainer from './CommentContainer'
+import CommentContainer from '../Comments/CommentContainer'
 
-import './components.css'
+import '../components.css'
 
 class PostBottom extends Component {
     constructor(props) {

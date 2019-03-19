@@ -5,7 +5,10 @@ import PropTypes from 'prop-types';
 import PostHeader from './PostHeader'
 import PostBottom from './PostBottom'
 
-import './components.css'
+
+import PostsPage from './PostsPage'
+
+import '../components.css'
 
 class PostContainer extends Component {
     constructor(props) {
@@ -26,28 +29,43 @@ class PostContainer extends Component {
         }
     }
 
-    onDoubleClickHelper = e => {
-
-    }
-
     render() {
         console.log('post container RENDER invoked')
         return (
             <div className='container-post'>
+
+                {console.log(this.props.post.thumbnailUrl)}
+                {console.log(this.props.post.username)}
+
                 <PostHeader 
                     thumbnailUrl={this.props.post.thumbnailUrl}
                     username={this.props.post.username}
                 />
-
                 <div className='postIMG'>
                     <img src={this.props.post.imageUrl} alt='img'/>
                 </div>
-
                 <PostBottom 
                     likes={this.props.post.likes}
                     comments={this.props.post.comments}
-                /> 
+                />
             </div>
+
+            // <div className='container-post'>
+            //     <PostHeader 
+            //         thumbnailUrl={this.props.post.thumbnailUrl}
+            //         username={this.props.post.username}
+            //     />
+
+                // <div className='postIMG'>
+                //     <img src={this.props.post.imageUrl} alt='img'/>
+                // </div>
+
+                // <PostBottom 
+                //     likes={this.props.post.likes}
+                //     comments={this.props.post.comments}
+                // /> 
+            // </div>
+
         )
     }
 }

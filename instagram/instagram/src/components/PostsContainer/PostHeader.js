@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './components.css'
+import '../components.css'
 
 function PostHeader(props) {
     const { thumbnailUrl, username }  = props;
