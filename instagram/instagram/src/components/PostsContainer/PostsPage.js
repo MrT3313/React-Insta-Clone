@@ -1,21 +1,33 @@
-import React from 'react'
+// -IMPORTS- // 
+    import React from 'react'
 
-import SearchBar from '../SearchBar/SearchBar'
-import PostContainer from './PostContainer'
+    // HIGHER ORDER COMPONENT
+    import HOC_withAuthenticate from '../authentication/HOC_withAuthenticate'
 
-import '../components.css'
+    // COMPONENTS
+    import SearchBar from '../SearchBar/SearchBar'
+    import PostContainer from './PostContainer'
 
+    // CSS
+    import '../components.css'
+// -**-END-**-//
+// -Start Code- //
 function PostsPage(props) {
-    const { thumbnailUrl, username }  = props;
+
+    const HOC = HOC_withAuthenticate()
+    console.log(HOC)
 
         return (
             <div className='PostsPage'>
-                <h2>inside postPage</h2>
                 <SearchBar />
 
                 {console.log(props)}
                 {console.log(props.posts)}
                 {console.log(props.posts.length)}
+
+
+                {/* your going to call your HOC in here?? */}
+                <HOC />
 
                 {props.posts.length > 0 ? (
                     props.posts.map( post => (

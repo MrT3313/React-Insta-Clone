@@ -5,9 +5,6 @@ import PropTypes from 'prop-types';
 import PostHeader from './PostHeader'
 import PostBottom from './PostBottom'
 
-
-import PostsPage from './PostsPage'
-
 import '../components.css'
 
 class PostContainer extends Component {
