@@ -1,10 +1,21 @@
-import React, { Component } from 'react';
-import './App.css';
+// -IMPORTS- // 
+  import React, { Component } from 'react';
+  import './App.css';
 
-import dummyData from './components/dummy-data'
+    // HIGHER ORDER COMPONENT
+    import HOC_withAuthenticate from './components/authentication/HOC_withAuthenticate'
 
-import PostsPage from './components/PostsContainer/PostsPage'
+    // COMPONENTS
+    import PostsPage from './components/PostsContainer/PostsPage'
 
+    // Data
+    import dummyData from './components/dummy-data'
+
+// -**-END-**-//
+// -Start Code- //
+
+const ComponentFromWithAuthenticate = HOC_withAuthenticate(PostsPage)
+  console.log(ComponentFromWithAuthenticate)
 class App extends Component {
   constructor() {
     console.log('Constructor Invoked')
@@ -26,8 +37,8 @@ class App extends Component {
     return (
       <div className="App">
 
-            <PostsPage posts={this.state.posts} />
-
+            {/* <PostsPage posts={this.state.posts} /> */}
+            <ComponentFromWithAuthenticate posts={this.state.posts}/>
 
           
       </div>

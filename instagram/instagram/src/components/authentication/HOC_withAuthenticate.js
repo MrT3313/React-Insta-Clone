@@ -6,10 +6,21 @@ import PropTypes from 'prop-types';
 
 
 // HOC = function that returns a class component
-const HOC_withAuthenticate = () => {
+const HOC_withAuthenticate = FunctionArgument => {
     return class extends React.Component {
+        // constructor(props) {
+        //     super(props)
+        //         this.state = {
+
+        //         }
+        //     }
+
         render () {
-            return <h2>HOC</h2>
+            return (
+                <div className='HOCclass'>
+                    <FunctionArgument posts={this.props.posts}/>
+                </div>
+            )
         }
     }
 }

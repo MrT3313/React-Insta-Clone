@@ -1,8 +1,6 @@
 // -IMPORTS- // 
     import React from 'react'
 
-    // HIGHER ORDER COMPONENT
-    import HOC_withAuthenticate from '../authentication/HOC_withAuthenticate'
 
     // COMPONENTS
     import SearchBar from '../SearchBar/SearchBar'
@@ -14,9 +12,6 @@
 // -Start Code- //
 function PostsPage(props) {
 
-    const HOC = HOC_withAuthenticate()
-    console.log(HOC)
-
         return (
             <div className='PostsPage'>
                 <SearchBar />
@@ -24,10 +19,6 @@ function PostsPage(props) {
                 {console.log(props)}
                 {console.log(props.posts)}
                 {console.log(props.posts.length)}
-
-
-                {/* your going to call your HOC in here?? */}
-                <HOC />
 
                 {props.posts.length > 0 ? (
                     props.posts.map( post => (
