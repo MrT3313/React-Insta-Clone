@@ -16,11 +16,7 @@ const HOC_withAuthenticate = FunctionArg_PostComponent => FunctionArg_loginCompo
             }
 
         componentDidMount() {
-            if (this.state.loggedIn !== true) {
 
-            } else {
-
-            }
         }
 
         toggle_loggedIn = () => {
