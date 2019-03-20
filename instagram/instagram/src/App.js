@@ -7,6 +7,7 @@
 
     // COMPONENTS
     import PostsPage from './components/PostsContainer/PostsPage'
+    import Login from './components/LogIn/login'
 
     // Data
     import dummyData from './components/dummy-data'
@@ -14,7 +15,7 @@
 // -**-END-**-//
 // -Start Code- //
 
-const ComponentFromWithAuthenticate = HOC_withAuthenticate(PostsPage)
+const ComponentFromWithAuthenticate = HOC_withAuthenticate(PostsPage)(Login)
   console.log(ComponentFromWithAuthenticate)
 class App extends Component {
   constructor() {
