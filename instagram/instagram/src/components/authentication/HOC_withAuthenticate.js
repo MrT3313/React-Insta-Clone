@@ -1,7 +1,7 @@
 
 
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import Login from '../LogIn/login';
 
 
 
@@ -19,14 +19,25 @@ const HOC_withAuthenticate = FunctionArg_PostComponent => FunctionArg_loginCompo
             if (this.state.loggedIn !== true) {
 
             } else {
-                
+
             }
+        }
+
+        toggle_loggedIn = () => {
+            this.setState( prevState => {
+                return {loggedIn: !prevState.loggedIn}
+            })
         }
 
         render () {
             return (
                 <div className='HOCclass'>
-                    <FunctionArg_PostComponent posts={this.props.posts}/>
+
+                    {this.state.loggedIn === false ? <Login /> : <FunctionArg_PostComponent posts={this.props.posts}/>  }
+                        
+                    
+
+                    
                 </div>
             )
         }

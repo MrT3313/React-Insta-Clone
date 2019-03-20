@@ -1,7 +1,10 @@
 
+// -IMPORTS- // 
+    import React, { Component } from 'react';
 
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+    // CSS
+    import './login.css'
+// -**-END-**-//
 
 
 
