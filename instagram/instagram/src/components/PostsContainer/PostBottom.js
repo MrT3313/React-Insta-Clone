@@ -8,13 +8,38 @@ class PostBottom extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            likeStatus: false
+            likeStatus: false,
+            likeCounter: this.props.likes
         }
         console.log('comment container CONSTRUCTOR invoked')
     }
 
     likeBtnTgl = e => {
-        this.setState( { likeStatus: !this.state.likeStatus} )
+        
+        this.state.likeStatus === false ? (
+            // CHANGING TO TRUE -- ADDING LIKE
+            this.setState( prevState => {
+                return {
+                    likeStatus: !this.state.likeStatus,
+                    likeCounter: prevState.likeCounter + 1
+                }
+            })
+        ) : (
+            // CHANGING TO false -- removing LIKE
+            this.setState( prevState => {
+                return {
+                    likeStatus: !this.state.likeStatus,
+                    likeCounter: prevState.likeCounter - 1
+                }
+            })
+        )
+
+        this.setState( prevState => {
+            return {
+                
+            }
+        })
+        console.log(this.state.likeCounter)
     }
 
     render() {
@@ -30,7 +55,7 @@ class PostBottom extends Component {
                     ></i>
                     <i className="far fa-comment"></i>
                     <div className='likeCounter'>
-                        <div>{this.props.likes} likes</div>
+                        <div>{this.state.likeCounter} likes</div>
                     </div>
                 </div>
 

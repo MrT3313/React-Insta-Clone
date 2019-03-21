@@ -21,7 +21,7 @@ const HOC_withAuthenticate = FunctionArg_PostComponent => FunctionArg_loginCompo
         constructor(props) {
             super(props)
                 this.state = {
-                    loggedIn: false
+                    loggedIn: true
                 }
             }
 
