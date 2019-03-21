@@ -15,7 +15,13 @@ function SearchBar(props) {
                     </div>
                 </div>
                 <form className='searchBar-center'>
-                    <input type="text" name='searchBar' placeholder='Search'/>
+                    <input 
+                        type="text" 
+                        name='searchBar' 
+                        placeholder='Search'
+
+                        onChange={props.filterSearchText}
+                    />
                 </form>
                 <div className='searchBar-right'>
                     <i className="far fa-compass"></i>

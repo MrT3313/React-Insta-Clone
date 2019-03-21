@@ -47,22 +47,6 @@ class PostContainer extends Component {
                 />
             </div>
 
-            // <div className='container-post'>
-            //     <PostHeader 
-            //         thumbnailUrl={this.props.post.thumbnailUrl}
-            //         username={this.props.post.username}
-            //     />
-
-                // <div className='postIMG'>
-                //     <img src={this.props.post.imageUrl} alt='img'/>
-                // </div>
-
-                // <PostBottom 
-                //     likes={this.props.post.likes}
-                //     comments={this.props.post.comments}
-                // /> 
-            // </div>
-
         )
     }
 }

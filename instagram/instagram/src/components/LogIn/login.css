@@ -9,12 +9,12 @@
     background-color:orange;
 }
 
-div {
+/* div {
     margin-bottom: 15px;
 }
     div :last-child {
         margin-bottom: 0px;
-    }
+    } */
 
 input {
     width: 200px;

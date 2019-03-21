@@ -22,7 +22,8 @@ class App extends Component {
     console.log('Constructor Invoked')
     super();
     this.state = {
-      posts: []
+      posts: [],
+      searchText: ''
     }
   }
   componentDidMount() { // ONLY called ONCE --> SETUP
@@ -33,13 +34,23 @@ class App extends Component {
       }, 1000)
   }
 
+  filterSearchText = e => {
+    console.log('search bar onChange function triggered')
+      this.setState({ searchText: e.target.value})
+  }
+
   render() {
     console.log('Render Invoked')
     return (
       <div className="App">
 
-            {/* <PostsPage posts={this.state.posts} /> */}
-            <ComponentFromWithAuthenticate posts={this.state.posts}/>
+            <ComponentFromWithAuthenticate 
+              // Posts
+                posts={this.state.posts}
+              // Search Functionality
+                searchText={this.state.searchText}
+                filterSearchText={this.filterSearchText}
+            />
 
           
       </div>
