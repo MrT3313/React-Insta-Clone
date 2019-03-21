@@ -21,7 +21,7 @@ const HOC_withAuthenticate = FunctionArg_PostComponent => FunctionArg_loginCompo
         constructor(props) {
             super(props)
                 this.state = {
-                    loggedIn: true
+                    loggedIn: false
                 }
             }
 
@@ -35,7 +35,12 @@ const HOC_withAuthenticate = FunctionArg_PostComponent => FunctionArg_loginCompo
             return (
                 <div className='HOCclass'>
                     {
-                        this.state.loggedIn === false ? <Login /> : 
+                        this.state.loggedIn === false ? 
+                            <Login 
+                                userDatabase={userDatabase}
+                                toggle_loggedIn={this.toggle_loggedIn}
+                            /> 
+                            : 
                             <FunctionArg_PostComponent 
                                 // Posts
                                     posts={this.props.posts}

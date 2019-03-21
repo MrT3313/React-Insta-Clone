@@ -7,23 +7,35 @@
 // -**-END-**-//
 // -Start Code- //
 class Login extends React.Component {
-    constructor(props) {
-        super(props)
-            this.state = {
-                userNameValue: '',
-                userPasswordValue: ''
+
+    method_changeHandler_userName = e => {
+        localStorage.setItem('userNameValue', e.target.value)
+
+    }
+    method_changeHandler_password = e => {
+        localStorage.setItem('userPasswordValue', e.target.value)
+    }
+
+    checkLogin = e => {
+        let loginResult = false
+        console.log(loginResult)
+
+        this.props.userDatabase.map( user => {
+            if (
+                localStorage.getItem('userNameValue') === user.db_userName &&
+                localStorage.getItem('userPasswordValue') === user.db_password
+            ) {
+                loginResult = true
             }
-        }
+            console.log(loginResult)
+        })
 
-        method_changeHandler_userName = e => {
-            // this.setState({ userNameValue: e.target.value})
-            localStorage.setItem('userNameValue', e.target.value)
-
+        if (loginResult !== false) {
+            this.props.toggle_loggedIn()
+        } else {
+            alert("FAILED LOGIN")
         }
-        method_changeHandler_password = e => {
-            // this.setState({ userPasswordValue: e.target.value})
-            localStorage.setItem('userPasswordValue', e.target.value)
-        }
+    }
 
     render () {
         return (
@@ -47,7 +59,9 @@ class Login extends React.Component {
                     />
                 </div>
                 <div>
-                    <button>
+                    <button
+                        onClick={this.checkLogin}
+                    >
                         Enter
                     </button>
                 </div>
