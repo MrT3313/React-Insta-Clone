@@ -52,13 +52,7 @@ class PostContainer extends Component {
 }
 
 PostContainer.propTypes = {
-    post: PropTypes.array,
-    // post.thumbnailUrl: PropTypes.number,
-    imageUrl: PropTypes.string,
-
-    username: PropTypes.string,
-    likes: PropTypes.number,
-    comments: PropTypes.array
+    post: PropTypes.object
 }
 
 export default PostContainer 

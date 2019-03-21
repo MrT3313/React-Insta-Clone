@@ -1,6 +1,7 @@
 
 
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Login from '../LogIn/login';
 
 const userDatabase = [
@@ -33,7 +34,6 @@ const HOC_withAuthenticate = FunctionArg_PostComponent => FunctionArg_loginCompo
         render () {
             return (
                 <div className='HOCclass'>
-
                     {
                         this.state.loggedIn === false ? <Login /> : 
                             <FunctionArg_PostComponent 
@@ -44,11 +44,15 @@ const HOC_withAuthenticate = FunctionArg_PostComponent => FunctionArg_loginCompo
                                     filterSearchText={this.props.filterSearchText}
                             />  
                     }
-                        
                 </div>
             )
         }
     }
+}
+
+HOC_withAuthenticate.propTypes = {
+    posts: PropTypes.array,
+    searchText: PropTypes.string
 }
 
 export default HOC_withAuthenticate
