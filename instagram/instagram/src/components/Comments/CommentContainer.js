@@ -21,10 +21,13 @@ class CommentContainer extends Component {
     }
     
     buttonHelper = e => {
+        console.log(localStorage.getItem('userNameValue'))
+
         if (this.state.commentText !== '') {
             const newComment = {
                 text: this.state.commentText,
-                username: 'billyBobTheTROLL'
+                // username: 'billyBobTheTROLL'
+                username: localStorage.getItem('userNameValue')
             }
         
             this.setState(prevState => ({

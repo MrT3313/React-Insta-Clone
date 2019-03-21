@@ -11,7 +11,7 @@ const userDatabase = [
     },
     {
         db_userName: 'person2',
-        db_password: 'zZzaAa'
+        db_password: '123'
     }
 ]
 
