@@ -6,6 +6,10 @@ import Login from '../LogIn/login';
 
 const userDatabase = [
     {
+        db_userName: 'Mr.T',
+        db_password: 'abc123'
+    },
+    {
         db_userName: 'billyBobTheTROLL',
         db_password: 'ABc13'
     },
@@ -21,7 +25,7 @@ const HOC_withAuthenticate = FunctionArg_PostComponent => FunctionArg_loginCompo
         constructor(props) {
             super(props)
                 this.state = {
-                    loggedIn: true
+                    loggedIn: false
                 }
             }
 

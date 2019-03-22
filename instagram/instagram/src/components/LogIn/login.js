@@ -3,9 +3,36 @@
     import React, { Component } from 'react';
 
     // CSS
-    import './login.css'
+    import styled from 'styled-components'
 // -**-END-**-//
 // -Start Code- //
+
+// - Styled Components - //
+
+const Section = styled.section`
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    height: 300px;
+`;
+
+const Button = styled.button`
+    font-size: 20px;
+    width: 75px;
+`;
+
+const Input = styled.input`
+    text-align: center;    
+    height: 25px;
+    width: 200px;
+    border: 1px dashed black;
+    margin-bottom: 15px;
+    
+
+`;
 class Login extends React.Component {
 
     method_changeHandler_userName = e => {
@@ -39,9 +66,9 @@ class Login extends React.Component {
 
     render () {
         return (
-            <div className='login'>
+            <Section className='login'>
                 <div className='userName_input'>
-                    <input 
+                    <Input 
                         type="text" 
                         name="input-userName"
                         placeholder="Enter UserName Here!"
@@ -50,8 +77,8 @@ class Login extends React.Component {
                     />
                 </div>
                 <div className='PW_input'>
-                    <input 
-                        type='text'
+                    <Input 
+                        type='password'
                         name='input-PW'
                         placeholder='Enter Password Here!'
 
@@ -59,13 +86,13 @@ class Login extends React.Component {
                     />
                 </div>
                 <div>
-                    <button
+                    <Button
                         onClick={this.checkLogin}
                     >
                         Enter
-                    </button>
+                    </Button>
                 </div>
-            </div>
+            </Section>
         )
     }
 }
