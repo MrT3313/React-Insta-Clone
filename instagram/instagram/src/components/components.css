@@ -1,0 +1,67 @@
+
+/* CONTAINER POST */
+
+.container-post {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-postHeader {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    border: 1px solid lightgrey
+}
+    .profile-IMG, .userName {
+        padding-left: 15px;
+    }
+
+    .profile-IMG img {
+        max-width: 30px;
+        border-radius: 50%;
+    }
+
+.postIMG img {
+    max-width: 660px;
+    margin-bottom: 15px;
+}
+
+.container-postBottom {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+}
+
+.postInteraction .fa-comment {
+    margin-left: 10px;
+}
+
+.likeCounter {
+    margin: 5px 0px;
+}
+
+/* COMMENTS */
+.container-comments {
+    display: flex;
+    flex-direction: column;
+}
+.commentContent {
+    display: flex;
+    margin-bottom: 5px;
+}
+    .commentContent .commentUser {
+        font-weight: bold;
+        padding-right: 5px;
+    }
+.addComment {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid lightgrey;
+    margin-right: 15px;
+    height: 40px;
+    
+}
+input {
+    border: 0px;
+    flex-grow: 1;
+}
